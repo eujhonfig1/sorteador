@@ -4,6 +4,22 @@ const inputMinimo = document.querySelector('.input-min');
 const inputMaximo = document.querySelector('.input-max');
 const inputResultado = document.querySelector('#result'); 
 
+// Elementos do Modal
+const customAlert = document.querySelector('#custom-alert');
+const modalMessage = document.querySelector('#modal-message');
+const closeMaxModal = document.querySelector('#close-modal');
+
+// Função para mostrar o alerta customizado no centro
+function mostrarAlerta(mensagem) {
+    modalMessage.textContent = mensagem;
+    customAlert.classList.remove('hidden');
+}
+
+// Fechar o modal ao clicar no OK
+closeMaxModal.addEventListener('click', () => {
+    customAlert.classList.add('hidden');
+});
+
 // Ouvindo o clique no botão
 botaoSortear.addEventListener('click', () => {
   
@@ -13,7 +29,7 @@ botaoSortear.addEventListener('click', () => {
 
   // Validação para ver se os campos não estão vazios
   if (isNaN(valorMin) || isNaN(valorMax)) {
-    alert('Por favor, preencha os dois campos com números!');
+    mostrarAlerta('Por favor, preencha os dois campos com números!');
     return;
   }
 
@@ -25,7 +41,7 @@ botaoSortear.addEventListener('click', () => {
 
   // Validação pós-arredondamento
   if (min >= max) {
-    alert('O primeiro número deve ser menor do que o segundo número!');
+    mostrarAlerta('O primeiro número deve ser menor do que o segundo número!');
     return;
   }
 

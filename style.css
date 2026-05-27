@@ -107,3 +107,55 @@ p {
     color: #E0EEEE;
     font-size: 28px;
 }
+
+
+/* Fundo escuro transparente ocupando a tela toda */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6); /* Sombra preta no fundo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Garante que fica por cima de tudo */
+}
+
+/* Caixa do alerta no meio */
+.modal-box {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 14px;
+    text-align: center;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+    max-width: 400px;
+    width: 80%;
+}
+
+/* Estilizando o texto do erro dentro do modal */
+.modal-box p {
+    color: #252525 !important; /* Sobrescreve a cor clara do seu p geral */
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+/* Estilizando o botão OK do modal */
+#close-modal {
+    background: #0051ff;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 30px;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 0; /* Reseta a margem do seu botão global */
+    width: auto;
+    height: auto;
+}
+
+/* Classe utilitária para esconder o modal */
+.hidden {
+    display: none !important;
+}
